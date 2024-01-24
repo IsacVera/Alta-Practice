@@ -1,0 +1,9 @@
+type Node struct {
+	Value: int
+	Prev: *Node
+}
+
+type Stack struct{
+	Length: int
+	Head: *Node
+}
