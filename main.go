@@ -1,14 +1,10 @@
 package main
 
-import (
-    "fmt"
-)
+//import "fmt"
+
 
 func main() {
-    algoList := [2]string{"bubblesort", "quicksort"}
-
+    algoList := [3]string{"bubblesort", "quicksort", "stack"}
     checkFiles(algoList)
-
-    fmt.Println("files were created")
 
 }
