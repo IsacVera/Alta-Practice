@@ -4,13 +4,6 @@ import (
 	"fmt"
 )
 
-func resetMenu() {
-    fmt.Println("\nSelect which file you want to reset:")
-    userInput := getUserInput(2)
-    fmt.Println(userInput)
-
-}
-
 func main() {
     algoFileList := [3]string{"bubblesort", "quicksort", "stack"}
     checkFiles(algoFileList)
@@ -23,6 +16,30 @@ func main() {
     userInput := getUserInput(2)
 
     if userInput == 1 {
-        resetMenu()
+        resetMenu(algoFileList)
     }
 }
+
+func resetMenu(algoFileList [3]string) {
+    fmt.Println("\nSelect which file you want to reset:")
+    fmt.Println("1. Bubble Sort\n2. Quick Sort\n3. Stack")
+    userInput := getUserInput(2)
+    if (userInput == 1) {
+        prepareFile("bubblesort")
+    } else if (userInput == 2) {
+        prepareFile("quicksort")
+    } else if (userInput == 3) {
+        prepareFile("stack")
+    }
+}
+
+func showAnswerMenu() {
+    fmt.Println("\nSelect which answer you want to see:")
+    fmt.Println("1. Bubble Sort\n2. Quick Sort\n3. Stack")
+    userInput := getUserInput(2)
+
+    if (userInput == 1) {
+        showFile("bubblesort")
+    }
+}
+

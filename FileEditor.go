@@ -15,13 +15,13 @@ func checkFiles(algorithms [3]string) string {
         _, err := os.Stat(filePath) 
 
         if err != nil {
-            openFile(algo)
+            prepareFile(algo)
         }
     }
     return "pass"
 }
 
-func openFile(algo string) {
+func prepareFile(algo string) {
     fileName := fmt.Sprintf("DataAlgoPractice/%s.go", algo)
 
     createdFile, err := os.Create(fileName)
@@ -51,4 +51,5 @@ func resetFile(practiceFile *os.File, algo string) {
     }
 }
 
-//func showFile(practiceFile
+func showFile(algo string) {
+}
