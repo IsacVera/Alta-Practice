@@ -29,7 +29,7 @@ func sliceOffNull(byteBuf []byte) {
 
 func validInputCheck(inputBytes []byte, inputInt int, validInputSize int) bool{
     const maxInput int = 3
-    const minInput int = 1
+    const minInput int = 0
 
     emptyInput := inputBytes[0] == '\n'
     inRange := inputInt >= minInput && inputInt <= maxInput
