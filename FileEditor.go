@@ -52,4 +52,14 @@ func resetFile(practiceFile *os.File, algo string) {
 }
 
 func showFile(algo string) {
+    fileSource := fmt.Sprintf("DataAlgoSource/%sComplete.txt", algo)
+
+    byteAlgoCode, sourceErr := os.ReadFile(fileSource)
+    if sourceErr != nil {
+        log.Fatalln("Failed: Reading Source File")
+    }
+
+    algoCode := string(byteAlgoCode)
+
+    fmt.Println(algoCode)
 }
