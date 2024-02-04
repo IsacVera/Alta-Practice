@@ -61,6 +61,8 @@ func showAnswerMenu() {
             showFile("bubblesort")
         } else if (userInput == 2) {
             showFile("quicksort")
+        } else if (userInput == 3) {
+            showFile("stack")
         }
     }
 }

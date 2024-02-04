@@ -1,0 +1,67 @@
+
+import (
+	"errors"
+	"fmt"
+)
+
+type Node struct {
+    value int
+    prev *Node
+}
+
+type Stack struct {
+    length int
+    head *Node
+}
+
+func (s *Stack) makeStack() {
+    s.length = 0 
+}
+
+func (s *Stack) push(val int) {
+    node := &Node{value: val}
+
+    s.length++
+    if s.head == nil {
+        s.head = node 
+        return
+    }
+
+    node.prev = s.head
+    s.head = node
+}
+
+func (s *Stack) pop() (int, error){
+    s.length = max(0, s.length-1)
+
+    if s.length == 0 {
+        head := s.head
+        s.head = nil
+
+        if head == nil {
+            return 0, errors.New("Pop from empty stack")
+        }
+        return head.value, nil
+    }
+
+    head := s.head
+    s.head = head.prev
+    head.prev = nil
+
+    return head.value, nil
+}
+
+func (s *Stack) peek() (int, error){
+    if s.head == nil {
+        return 0, errors.New("Peek into empty stack")
+    }
+
+    return s.head.value, nil
+}
+
+func max(x int, y int) int {
+    if x > y {
+        return x
+    }
+    return y
+}
